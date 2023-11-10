@@ -55,6 +55,7 @@
     "@dcloudio/uni-mp-xhs": "3.0.0-3090620231104002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3090620231104002",
     "@vant/weapp": "^1.11.1",
+    "dayjs": "^1.11.10",
     "nutui-uniapp": "^1.3.5",
     "pinia": "2.0.33",
     "vue": "^3.3.7",

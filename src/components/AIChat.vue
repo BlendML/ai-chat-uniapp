@@ -20,8 +20,10 @@
         <div class="i-tabler-settings" @click="() => emit('trigger', true)"></div>
       </div>
     </div>
-
-    <slot />
+    
+    <div class="grow" >
+      <slot />
+    </div>
   </div>
 </template>
 

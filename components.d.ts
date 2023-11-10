@@ -11,10 +11,13 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AIChat: typeof import('./src/components/AIChat.vue')['default']
     AIMessage: typeof import('./src/components/AIMessage.vue')['default']
+    NutAvatar: typeof import('nutui-uniapp/components/avatar/avatar.vue')['default']
     NutInput: typeof import('nutui-uniapp/components/input/input.vue')['default']
     NutPopup: typeof import('nutui-uniapp/components/popup/popup.vue')['default']
     NutRange: typeof import('nutui-uniapp/components/range/range.vue')['default']
     NutTextarea: typeof import('nutui-uniapp/components/textarea/textarea.vue')['default']
+    SendBox: typeof import('./src/components/SendBox.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
+    TypeWriter: typeof import('./src/components/TypeWriter.vue')['default']
   }
 }

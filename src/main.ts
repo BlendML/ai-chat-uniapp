@@ -1,5 +1,5 @@
 import { createSSRApp } from "vue"
-import * as Pinia from 'pinia';
+import * as Pinia from 'pinia'
 import 'virtual:uno.css'
 
 import App from "./App.vue";

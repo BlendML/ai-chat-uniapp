@@ -8,7 +8,9 @@
     },
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types"],
-    "ignoreDeprecations": "5.0"
+    "ignoreDeprecations": "5.0",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

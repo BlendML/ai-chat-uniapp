@@ -1,10 +1,22 @@
 <template>
-  <div class="app-box h-full">
-    <AIChat @trigger="triggerSettings" >
-      <AIMessage />
-    </AIChat>
+  <div class='h-full w-full flex flex-col'>
+    <div class="text-center my-2 w-full h-15">
+      <image
+        class="h-full"
+        mode="aspectFit"
+        src="/static/logo.jpg"
+      />
+    </div>
 
-    <Settings :show="showSettings" @trigger="triggerSettings" />
+    <div class='h-full p-4'>
+      <div class="app-box h-full w-full">
+        <AIChat @trigger="triggerSettings" >
+          <AIMessage  />
+        </AIChat>
+
+        <Settings :show="showSettings" @trigger="triggerSettings" />
+      </div>
+    </div>
   </div>
 </template>
 
