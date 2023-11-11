@@ -18,6 +18,7 @@ const message = ref('')
 
 async function sendMessage() {
   const tempMsgId = Math.random().toString()
+  const question = message.value
 
   store.messageList.push({
     role: 'Me',
@@ -32,20 +33,22 @@ async function sendMessage() {
     role: 'AI',
     typing: false,
     loading: true,
-    messageId: tempMsgId
+    messageId: tempMsgId,
+    content: ""
   })
 
+  message.value = ''
+
   const response = await uni.request({
-      url: 'https://api.ai-chat.run/ask?question=' + message.value,
-      method: "POST"
+    url: 'https://api.ai-chat.run/ask?question=' + question,
+    method: "POST"
   });
 
   const result = response.data as AnyObject
-  let content = '"我不懂您的问题，请换一个～"'
+  let content = "我不懂您的问题，请换一个～"
 
   if (result.code == 200) {
-    content = result.data.choices[0].content
-    content = content.replace(/(^\\")|(\\"$)/g, "").replace(/^\"|\"$/g, '').replace(/\\n/g, '\n')
+    content = result.data.choices[0].content.replace(/^\"|\"$/g, '').replace(/\\n/g, '\n').replace(/\\\"/g, '"')
   }
 
   store.messageList = store.messageList.map(item => {
@@ -62,8 +65,6 @@ async function sendMessage() {
       return item
     }
   })
-
-  message.value = ''
 }
 </script>
 

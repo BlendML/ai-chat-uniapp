@@ -6,11 +6,12 @@ type Message = {
   typing: boolean,
   loading: boolean,
   messageId: string,
-  content?: string,
+  content: string,
   createAt?: string
 }
 
 export const useAIStore = defineStore('AIStore', () => {
+  const newMessage = ref(false)
   const serviceName = ref('小智')
   const temperature = ref(1)
   const filterWords = ref("")
@@ -26,6 +27,7 @@ export const useAIStore = defineStore('AIStore', () => {
   ])
 
   return {
+    newMessage,
     serviceName,
     temperature,
     filterWords,
