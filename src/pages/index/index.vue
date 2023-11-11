@@ -1,6 +1,6 @@
 <template>
   <div class='h-full w-full flex flex-col'>
-    <div class="text-center my-2 w-full h-15">
+    <div class="text-center my-2 w-full h-20">
       <image
         class="h-full"
         mode="aspectFit"

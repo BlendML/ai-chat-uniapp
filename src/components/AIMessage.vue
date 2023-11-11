@@ -2,7 +2,6 @@
   <div class='flex flex-col h-full grow'>
     <div class='grow message-container'>
       <template v-for="item in store.messageList" :key="item.messageId">
-
         <div v-if="item.role == 'AI'" class='flex items-center mb-8'>
           <div class='avator'>
             <nut-avatar>
@@ -14,7 +13,10 @@
               <span class='font-bold mr-2'>{{ store.serviceName }}</span>
               <span class='opacity-80 text-xs'>{{ item.createAt }}</span>
             </div>
-            <div>
+            <div v-if="item.loading">
+              <image class="w-10 h-10" src='/static/message-loading.svg' fit="scaleToFill" />
+            </div>
+            <div v-else>
               <type-writer :data="[item.content]" />
             </div>
           </div>

@@ -35,28 +35,27 @@ function addText() {
 </script>
 
 <style lang="scss">
-@keyframes blink {
-  0% {
-    color: transparent,
-  }
-  45% {
-    color: transparent,
-  }
-  50% {
-    color: #6f6f6f,
-  }
-  100% {
-    color: #6f6f6f,
-  }
-}
+// @keyframes blink {
+//   0% {
+//     color: transparent,
+//   }
+//   45% {
+//     color: transparent,
+//   }
+//   50% {
+//     color: #6f6f6f,
+//   }
+//   100% {
+//     color: #6f6f6f,
+//   }
+// }
 
-.animate-blink::after {
-  content: '|';
-  font-size: 0.6rem;
-  margin-left: 4px;
-  animation-name: blink;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
+// .animate-blink::after {
+//   content: '|';
+//   font-size: 0.6rem;
+//   margin-left: 4px;
+//   animation-name: blink;
+//   animation-duration: 1s;
+//   animation-iteration-count: infinite;
+// }
 </style>
