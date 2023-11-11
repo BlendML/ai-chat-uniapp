@@ -13,13 +13,8 @@
       </div>
 
       <div class='mb-10'>
-        <div size="sm" class="mb-2">过滤关键词</div>
-        <nut-textarea v-model="store.filterWords" :autosize="{ maxHeight: 100, minHeight: 50 }" />
-      </div>
-
-      <div class='mb-10'>
         <div size="sm" class="mb-10">回答多样性 (数值越大，多样性越高)</div>
-        <nut-range v-model="store.temperature" :min="1" :max="100" >
+        <nut-range v-model="store.temperature" :step="10" :min="1" :max="100" >
           <template #button>
             <div class="custom-button">{{ store.temperature }}</div>
           </template>

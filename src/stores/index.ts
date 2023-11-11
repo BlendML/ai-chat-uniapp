@@ -11,10 +11,8 @@ type Message = {
 }
 
 export const useAIStore = defineStore('AIStore', () => {
-  const newMessage = ref(false)
   const serviceName = ref('小智')
   const temperature = ref(1)
-  const filterWords = ref("")
   const messageList = ref<Message[]>([
     {
       role: 'AI',
@@ -27,10 +25,8 @@ export const useAIStore = defineStore('AIStore', () => {
   ])
 
   return {
-    newMessage,
     serviceName,
     temperature,
-    filterWords,
     messageList
   }
 })

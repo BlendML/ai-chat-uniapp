@@ -19,6 +19,7 @@ const message = ref('')
 async function sendMessage() {
   const tempMsgId = Math.random().toString()
   const question = message.value
+  const temperature = store.temperature / 100
 
   store.messageList.push({
     role: 'Me',
@@ -40,7 +41,7 @@ async function sendMessage() {
   message.value = ''
 
   const response = await uni.request({
-    url: 'https://api.ai-chat.run/ask?question=' + question,
+    url: `https://api.ai-chat.run/ask?question=${question}&temperature=${temperature}`,
     method: "POST"
   });
 
