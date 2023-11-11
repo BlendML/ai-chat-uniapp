@@ -45,6 +45,7 @@ async function sendMessage() {
 
   if (result.code == 200) {
     content = result.data.choices[0].content
+    content = content.replace(/(^\\")|(\\"$)/g, "").replace(/^\"|\"$/g, '').replace(/\\n/g, '\n')
   }
 
   store.messageList = store.messageList.map(item => {
@@ -62,7 +63,7 @@ async function sendMessage() {
     }
   })
 
-  message.value == ''
+  message.value = ''
 }
 </script>
 

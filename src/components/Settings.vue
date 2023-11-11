@@ -48,7 +48,7 @@ const store = useAIStore()
   font-size: 10px;
   line-height: 18px;
   text-align: center;
-  background-color: #ee0a24;
+  background-color: #1877ff;
   border-radius: 100px;
 }
 </style>

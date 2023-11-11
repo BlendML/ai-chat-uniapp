@@ -16,7 +16,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "nutui-uniapp/styles/variables.scss";',
+        additionalData: '@import \'@/theme.scss\'; @import \'nutui-uniapp/styles/variables.scss\';',
       },
     },
   },
