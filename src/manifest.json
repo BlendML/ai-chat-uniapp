@@ -1,6 +1,6 @@
 {
     "name" : "智灵AI",
-    "appid" : "",
+    "appid" : "wxffc22167bcc74212",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -42,7 +42,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxffc22167bcc74212",
         "setting" : {
             "urlCheck" : false
         },

@@ -2,8 +2,8 @@
   <div class="send-box">
     <nut-input
       v-model="message"
-      :border="false"
-      placeholder="请输入文本"
+      :border="true"
+      placeholder="输入@召唤智能体"
     />
 
     <div class="i-tabler-send send-button" @click="sendMessage"></div>
@@ -49,7 +49,6 @@ async function sendMessage() {
     }
   });
 
-  console.log("====>response: ", response)
   const result = response.data as AnyObject
   let content = "我不懂您的问题，请换一个～"
 
