@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center w-fit">
-    <text>{{ state.text }}</text>
+    <div v-html="state.text"></div>
   </div>
 </template>
 

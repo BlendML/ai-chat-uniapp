@@ -12,6 +12,31 @@
 
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import markdownit from 'markdown-it'
+
+const md = markdownit()
+
+// import { Marked } from "marked";
+// import { markedHighlight } from "marked-highlight";
+// import hljs from "highlight.js";
+// import "highlight.js/styles/night-owl.css";
+
+// const marked = new Marked(
+//   markedHighlight({
+//     langPrefix: "hljs language-",
+//     highlight(code, lang, info) {
+//       const language = hljs.getLanguage(lang) ? lang : "plaintext";
+//       return hljs.highlight(code, { language }).value;
+//     },
+//   }),
+// );
+
+// const marked = new Marked()
+
+// marked.use({
+//   gfm: true,
+//   breaks: false
+// });
 
 const store = useAIStore()
 const message = ref('')
@@ -63,7 +88,7 @@ async function sendMessage() {
         typing: true,
         loading: false,
         messageId: Math.random().toString(),
-        content: content,
+        content: md.render(content),
         createAt: dayjs().format('HH:mm')
       }
     } else {
