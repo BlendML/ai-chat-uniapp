@@ -41,15 +41,20 @@ async function sendMessage() {
   message.value = ''
 
   const response = await uni.request({
-    url: `https://api.ai-chat.run/ask?question=${question}&temperature=${temperature}`,
-    method: "POST"
+    url: `http://192.168.7.19:20000/v1/chat/completions`,
+    method: "POST",
+    data: {
+      model: "Qwen2.5-14B-Instruct-GPTQ-Int8",
+      messages: [{ role: "user", content: question }]
+    }
   });
 
+  console.log("====>response: ", response)
   const result = response.data as AnyObject
   let content = "我不懂您的问题，请换一个～"
 
-  if (result.code == 200) {
-    content = result.data.choices[0].content.replace(/^\"|\"$/g, '').replace(/\\n/g, '\n').replace(/\\\"/g, '"')
+  if (response.statusCode == 200) {
+    content = result.choices[0].message.content.replace(/^\"|\"$/g, '').replace(/\\n/g, '\n').replace(/\\\"/g, '"')
   }
 
   store.messageList = store.messageList.map(item => {
