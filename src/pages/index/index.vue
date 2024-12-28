@@ -1,28 +1,30 @@
 <template>
+  <!-- <nut-popup position="left" :custom-style="{ width: '20%', height: '100%' }" v-model:visible="showLeft"> -->
+  <Settings :show="showSettings" @trigger="triggerSettings" />
   <nut-tabs v-model="state.tab1value" swipeable>
       <template #titles>
         <div class="title-list">
           <view
             v-for="item in state.list6" :key="item.paneKey" class="title-item"
-            :class="{ 'tabs-active': state.tab7value === item.paneKey }" @click="state.tab1value = item.paneKey"
+            :class="{ 'tabs-active': state.tab1value === item.paneKey }" @click="handleClick(item.paneKey)"
           >
             <nut-icon name="dongdong" />
             <view class="nut-tabs__titles-item__text">
               {{ item.title }}
             </view>
-            <view class="item__line" />
           </view>
         </div>
       </template>
-
-  <!-- <nut-popup position="left" :custom-style="{ width: '20%', height: '100%' }" v-model:visible="showLeft"></nut-popup> -->
     <nut-tab-pane title="对话" pane-key="c1">
       <div class="h-full p-4">
         <div class="app-box h-full w-full">
-          <AIChat @trigger="triggerSettings">
+          <AIMessage />
+          <!--
+          <AIChat>
             <AIMessage />
           </AIChat>
           <Settings :show="showSettings" @trigger="triggerSettings" />
+          -->
         </div>
       </div>
     </nut-tab-pane>
@@ -47,27 +49,35 @@ const state = reactive({
   tab7value: 'c1',
   list6: [
   {
-    title: '自定义 1',
+    title: '设置',
+    paneKey: 'c0'
+  },
+  {
+    title: '对话',
     paneKey: 'c1'
   },
   {
-    title: '自定义 2',
+    title: '智能体',
     paneKey: 'c2'
   },
   {
-    title: '自定义 3',
+    title: '广场',
     paneKey: 'c3'
   }
 ]
 });
 
-const showLeft = ref(false);
-
-const handleClick1 = () => {
-  showLeft.value = true;
-};
-
 const showSettings = ref(false);
+
+const handleClick = (paneKey: string) => {
+  state.tab1value = paneKey;
+
+  if (paneKey === 'c0') {
+    showSettings.value = true;
+  } else {
+    showSettings.value = false;
+  }
+};
 
 function triggerSettings(val: boolean) {
   showSettings.value = val;

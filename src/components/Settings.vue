@@ -1,7 +1,7 @@
 <template>
   <nut-popup
     :visible="props.show"
-    position="right"
+    position="left"
     closeable
     @click-close-icon="() => emit('trigger', false)"
     pop-class="h-full p-4"
