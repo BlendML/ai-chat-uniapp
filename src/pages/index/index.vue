@@ -1,5 +1,4 @@
 <template>
-  <!-- <nut-popup position="left" :custom-style="{ width: '20%', height: '100%' }" v-model:visible="showLeft"> -->
   <Settings :show="showSettings" @trigger="triggerSettings" />
   <nut-tabs v-model="state.tab1value" swipeable>
       <template #titles>
@@ -19,12 +18,6 @@
       <div class="h-full p-4">
         <div class="app-box h-full w-full">
           <AIMessage />
-          <!--
-          <AIChat>
-            <AIMessage />
-          </AIChat>
-          <Settings :show="showSettings" @trigger="triggerSettings" />
-          -->
         </div>
       </div>
     </nut-tab-pane>

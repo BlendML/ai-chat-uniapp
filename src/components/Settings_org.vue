@@ -21,8 +21,6 @@
         </nut-range>
       </div>
     </div>
-
-  <nut-button custom-color="#7232dd" plain @click="handleClick">单色按钮</nut-button>
   </nut-popup>
 </template>
 
@@ -36,10 +34,6 @@ const props = defineProps<{
 const emit = defineEmits(['trigger'])
 
 const store = useAIStore()
-
-const handleClick = () => {
-   uni.navigateTo({url: '/pages/chat/chat'})
-}
 </script>
 
 <style>

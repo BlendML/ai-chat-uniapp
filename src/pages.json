@@ -12,6 +12,9 @@
 			"style": {
 				"navigationBarTitleText": "智灵AI"
 			}
+		},
+		{
+			"path": "pages/chat/chat"
 		}
 	],
 	"globalStyle": {
