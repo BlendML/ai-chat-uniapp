@@ -7,7 +7,6 @@ type Message = {
   loading: boolean,
   messageId: string,
   content: string,
-  createAt?: string
 }
 
 export const useAIStore = defineStore('AIStore', () => {
@@ -20,7 +19,6 @@ export const useAIStore = defineStore('AIStore', () => {
       loading: false,
       messageId: Math.random().toString(),
       content: '您好，我是智能对话系统，能帮您解答任何问题~',
-      createAt: dayjs().format('HH:mm')
     }
   ])
 
