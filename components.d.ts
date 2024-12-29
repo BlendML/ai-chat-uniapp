@@ -20,6 +20,8 @@ declare module '@vue/runtime-core' {
     NutTabPane: typeof import('nutui-uniapp/components/tabpane/tabpane.vue')['default']
     NutTabs: typeof import('nutui-uniapp/components/tabs/tabs.vue')['default']
     SendBox: typeof import('./src/components/SendBox.vue')['default']
+    SendBox_ss3: typeof import('./src/components/SendBox_ss3.vue')['default']
+    SendBox_sse: typeof import('./src/components/SendBox_sse.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
     Settings_org: typeof import('./src/components/Settings_org.vue')['default']
     TypeWriter: typeof import('./src/components/TypeWriter.vue')['default']
